@@ -61,6 +61,60 @@
             object-fit: cover;
         }
 
+        .profile-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .profile-menu button {
+            padding: 10px 14px;
+            border: 1px solid #667eea;
+            border-radius: 20px;
+            background: white;
+            color: #667eea;
+            font: inherit;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .profile-menu button:hover,
+        .profile-menu button[aria-selected="true"] {
+            background: #667eea;
+            color: white;
+        }
+
+        .profile-menu button:focus-visible {
+            outline: 3px solid #764ba2;
+            outline-offset: 3px;
+        }
+
+        .profile-panel {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            overflow-wrap: anywhere;
+        }
+
+        .profile-panel h3 {
+            color: #764ba2;
+            margin-bottom: 12px;
+        }
+
+        .profile-panel p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .profile-panel a {
+            color: #667eea;
+        }
+
         .info {
             background: #f8f9fa;
             border-radius: 8px;
@@ -115,12 +169,139 @@
         <h1>Hello, Class K22A KTPM, How are YOU ???</h1>
         <h2>Lab 1 — Trải nghiệm CI/CD Pipeline</h2>
 
-        <p class="author">Author: PHẠM TUẤN ANH </p>
+        <p class="author">Author: PHẠM TUẤN ANH</p>
         <img
             class="avatar"
             src="Avt.jpg"
-            alt="Ảnh đại diện của tác giả"
+            alt="Ảnh đại diện của Phạm Tuấn Anh"
         >
+
+        <div class="profile-menu"
+             role="tablist"
+             aria-label="Hồ sơ cá nhân">
+
+            <button type="button" id="tab-personal" role="tab"
+                    aria-selected="true"
+                    aria-controls="personal"
+                    tabindex="0">
+                Thông tin cá nhân
+            </button>
+
+            <button type="button" id="tab-experience" role="tab"
+                    aria-selected="false"
+                    aria-controls="experience"
+                    tabindex="-1">
+                Năng lực & kinh nghiệm
+            </button>
+
+            <button type="button" id="tab-education" role="tab"
+                    aria-selected="false"
+                    aria-controls="education"
+                    tabindex="-1">
+                Bằng cấp
+            </button>
+
+            <button type="button" id="tab-languages" role="tab"
+                    aria-selected="false"
+                    aria-controls="languages"
+                    tabindex="-1">
+                Ngôn ngữ
+            </button>
+
+            <button type="button" id="tab-projects" role="tab"
+                    aria-selected="false"
+                    aria-controls="projects"
+                    tabindex="-1">
+                Dự án
+            </button>
+        </div>
+
+        <!-- Sửa các nội dung trong dấu [ ] thành thông tin của bạn -->
+        <section id="personal" class="profile-panel"
+                 role="tabpanel"
+                 aria-labelledby="tab-personal"
+                 tabindex="0">
+            <h3>Thông tin cá nhân</h3>
+            <p><strong>Họ tên:</strong> Phạm Tuấn Anh</p>
+            <p><strong>MSSV:</strong> [Mã số sinh viên]</p>
+            <p><strong>Lớp:</strong> [Tên lớp của bạn]</p>
+            <p><strong>Email:</strong> [Email liên hệ]</p>
+            <p>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/pta204">github.com/pta204</a>
+            </p>
+            <p>
+                <strong>Giới thiệu:</strong>
+                [Giới thiệu ngắn về bản thân, sở thích và mục tiêu]
+            </p>
+        </section>
+
+        <section id="experience" class="profile-panel"
+                 role="tabpanel"
+                 aria-labelledby="tab-experience"
+                 tabindex="0" hidden>
+            <h3>Năng lực & kinh nghiệm</h3>
+            <p><strong>Kỹ năng:</strong> [Các kỹ năng bạn có]</p>
+            <p><strong>Công cụ:</strong> [Các công cụ bạn sử dụng]</p>
+            <p>
+                <strong>Kinh nghiệm:</strong>
+                [Bài tập, hoạt động nhóm hoặc công việc đã làm]
+            </p>
+            <p>
+                <strong>Mục tiêu:</strong>
+                [Kỹ năng hoặc công việc bạn muốn phát triển]
+            </p>
+        </section>
+
+        <section id="education" class="profile-panel"
+                 role="tabpanel"
+                 aria-labelledby="tab-education"
+                 tabindex="0" hidden>
+            <h3>Bằng cấp & học vấn</h3>
+            <p><strong>Trường:</strong> [Tên trường]</p>
+            <p><strong>Ngành học:</strong> [Ngành học]</p>
+            <p><strong>Tình trạng:</strong> [Đang học hoặc đã tốt nghiệp]</p>
+            <p>
+                <strong>Bằng cấp / chứng chỉ:</strong>
+                [Thông tin thực tế hoặc “Chưa có”]
+            </p>
+        </section>
+
+        <section id="languages" class="profile-panel"
+                 role="tabpanel"
+                 aria-labelledby="tab-languages"
+                 tabindex="0" hidden>
+            <h3>Ngôn ngữ</h3>
+            <p><strong>Tiếng Việt:</strong> [Mức độ sử dụng]</p>
+            <p><strong>Tiếng Anh:</strong> [Mức độ hoặc chứng chỉ]</p>
+            <p><strong>Ngôn ngữ khác:</strong> [Nếu có]</p>
+            <p>
+                <strong>Ngôn ngữ lập trình:</strong>
+                [Các ngôn ngữ bạn đã học]
+            </p>
+        </section>
+
+        <section id="projects" class="profile-panel"
+                 role="tabpanel"
+                 aria-labelledby="tab-projects"
+                 tabindex="0" hidden>
+            <h3>Dự án</h3>
+            <p><strong>DevOps Lab 1 — Website cá nhân</strong></p>
+            <p>
+                Xây dựng website bằng HTML, CSS và JavaScript.
+                Sử dụng GitHub Actions để tự động triển khai
+                lên GitHub Pages.
+            </p>
+            <p>
+                <a href="https://github.com/pta204/devops-lab1-portfolio">
+                    Xem mã nguồn dự án
+                </a>
+            </p>
+            <p>
+                <strong>Dự án khác:</strong>
+                [Tên, mô tả và vai trò của bạn nếu có]
+            </p>
+        </section>
 
         <div class="info">
             <p><strong>Lesson:</strong> DevOps Lab 1 — Tổng quan</p>
@@ -155,6 +336,49 @@
     <script>
         document.getElementById('date').textContent =
             new Date().toLocaleDateString('vi-VN');
+
+        const tabs = Array.from(
+            document.querySelectorAll('.profile-menu [role="tab"]')
+        );
+
+        function selectTab(selectedTab) {
+            tabs.forEach(tab => {
+                const isSelected = tab === selectedTab;
+
+                tab.setAttribute('aria-selected', String(isSelected));
+                tab.tabIndex = isSelected ? 0 : -1;
+
+                const panel = document.getElementById(
+                    tab.getAttribute('aria-controls')
+                );
+
+                panel.hidden = !isSelected;
+            });
+        }
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => selectTab(tab));
+
+            tab.addEventListener('keydown', event => {
+                let nextIndex;
+
+                if (event.key === 'ArrowRight') {
+                    nextIndex = (index + 1) % tabs.length;
+                } else if (event.key === 'ArrowLeft') {
+                    nextIndex = (index - 1 + tabs.length) % tabs.length;
+                } else if (event.key === 'Home') {
+                    nextIndex = 0;
+                } else if (event.key === 'End') {
+                    nextIndex = tabs.length - 1;
+                } else {
+                    return;
+                }
+
+                event.preventDefault();
+                selectTab(tabs[nextIndex]);
+                tabs[nextIndex].focus();
+            });
+        });
     </script>
 </body>
 </html>
