@@ -37,6 +37,7 @@
             color: #667eea;
             margin-bottom: 8px;
             font-size: 32px;
+            line-height: 1.3;
         }
 
         h2 {
@@ -44,6 +45,20 @@
             margin-bottom: 24px;
             font-size: 18px;
             font-weight: normal;
+        }
+
+        .author {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .avatar {
+            display: block;
+            width: 80px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .info {
@@ -68,6 +83,10 @@
             margin: 4px;
         }
 
+        .badge a {
+            color: white;
+        }
+
         .footer {
             margin-top: 24px;
             font-size: 13px;
@@ -85,7 +104,7 @@
             }
 
             h1 {
-                font-size: 28px;
+                font-size: 26px;
             }
         }
     </style>
@@ -93,15 +112,20 @@
 
 <body>
     <div class="container">
-        <h1>Hello, DevOps!</h1>
+        <h1>Hello, Class K22A KTPM, How are YOU ???</h1>
+        <h2>Lab 1 — Trải nghiệm CI/CD Pipeline</h2>
+
+        <p class="author">Author: PHẠM TUẤN ANH </p>
+        <img
+            class="avatar"
+            src="Avt.jpg"
+            alt="Ảnh đại diện của tác giả"
+        >
+
         <div class="info">
-            <p><strong>Họ tên:</strong> PHẠM TUẤN ANH</p>
-            <p><strong>Mã số sinh viên:</strong> DTC235180017</p>
-            <p><strong>Lớp:</strong> KTPM K22A</p>
-            <p><strong>Email:</strong> DTC235180017@ictu.edu.vn</p>
-            <p><strong>Bài học:</strong> DevOps Lab 1 — Tổng quan</p>
-            <p><strong>Deploy bởi:</strong> GitHub Actions CI/CD</p>
-            <p><strong>Ngày deploy:</strong> <span id="date"></span></p>
+            <p><strong>Lesson:</strong> DevOps Lab 1 — Tổng quan</p>
+            <p><strong>Deploy by:</strong> GitHub Actions CI/CD</p>
+            <p><strong>Day deploy:</strong> <span id="date"></span></p>
             <p>
                 <strong>Pipeline status:</strong>
                 <span class="status">Automated</span>
@@ -115,7 +139,11 @@
             <span class="badge">GitHub Actions</span>
             <span class="badge">CI/CD</span>
             <br>
-            <span class="badge">DevOps</span>
+            <span class="badge">
+                <a href="https://github.com/pta204/devops-lab1-portfolio">
+                    DevOps 🔗
+                </a>
+            </span>
         </div>
 
         <div class="footer">
