@@ -1,387 +1,102 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Lab 1 — My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Trang cá nhân và dự án DevOps của Phạm Tuấn Anh.">
+<title>Phạm Tuấn Anh — Software & DevOps Portfolio</title>
+<script>try{const t=localStorage.getItem('portfolio-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.dataset.theme='dark'}catch{}</script>
+<style>
+:root{color-scheme:light;--bg:#f3f4fc;--surface:#fff;--soft:#f6f7fc;--text:#222940;--muted:#647089;--accent:#5048ca;--line:#e3e6f0;--shadow:0 18px 50px #30307512}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111526;--surface:#1b2136;--soft:#242b43;--text:#eef0ff;--muted:#b5bdd5;--accent:#b2adff;--line:#39415e;--shadow:0 18px 50px #0003}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',Arial,sans-serif;line-height:1.65}button,input,a{font:inherit}button,a,input{-webkit-tap-highlight-color:transparent}a{color:var(--accent);text-underline-offset:4px}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--accent);outline-offset:4px}button{min-height:44px}header{background:var(--surface);border-bottom:1px solid var(--line)}.top{max-width:1160px;margin:auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:800;letter-spacing:.03em;text-decoration:none}.tools{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:12px;padding:9px 14px}.btn:hover{background:var(--soft)}main{max-width:1160px;margin:32px auto;padding:0 24px}.hero{border-radius:24px;background:linear-gradient(120deg,#5656d8,#7c48b6);color:white;padding:40px;display:grid;grid-template-columns:1fr 150px;gap:28px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.13em;font-weight:700;margin:0 0 10px}.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:0 0 16px}.hero p{max-width:600px}.hero a{color:white}.portrait{width:140px;height:170px;border-radius:24px;object-fit:cover;border:4px solid #ffffff55}.fallback{width:140px;height:170px;border-radius:24px;place-items:center;background:#ffffff20;font-size:46px;font-weight:bold;border:4px solid #ffffff55}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{font-size:13px;padding:5px 12px;border-radius:30px;background:#ffffff20;border:1px solid #ffffff40}.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:24px;margin-top:24px}.sidebar,.content,.note{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.sidebar{align-self:start;padding:18px}.sidebar h2{font-size:12px;color:var(--muted);letter-spacing:.08em;margin:0 0 12px}.tabs{display:flex;flex-direction:column;gap:6px}.tab{text-align:left;border:0;border-radius:12px;padding:12px;background:transparent;color:var(--muted);font-weight:600}.tab:hover{background:var(--soft);color:var(--text)}.tab[aria-selected="true"]{background:var(--soft);color:var(--accent);box-shadow:inset 3px 0 var(--accent)}.content{padding:30px;min-width:0}.search-label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}.search{width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--soft);color:var(--text);padding:10px 14px}.search-status{font-size:13px;color:var(--muted);margin:8px 0 20px;min-height:21px}h2{font-size:25px;margin:0 0 12px}h3{font-size:17px;margin:0 0 8px}p{margin:0 0 14px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-wrap:anywhere}.label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}.value{font-weight:650}.wide{grid-column:1/-1}.list{padding-left:20px;margin:0}.list li{margin:8px 0}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.tags span{border:1px solid var(--line);border-radius:20px;padding:4px 10px;font-size:12px;color:var(--accent)}.project-links{display:flex;gap:16px;flex-wrap:wrap}.note{padding:22px 26px;margin-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.note p{margin:0}.small{font-size:13px}.foot{padding:26px;text-align:center;color:var(--muted);font-size:13px}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);border-radius:12px;background:var(--text);color:var(--surface);padding:12px 20px;max-width:calc(100% - 32px);box-shadow:var(--shadow);z-index:10}.manual{padding:16px;background:var(--soft);border-radius:12px;margin-top:18px}.manual input{width:100%;padding:10px;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:8px} [hidden]{display:none!important}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.tabs{flex-direction:row;flex-wrap:wrap}.tab[aria-selected="true"]{box-shadow:inset 0 -3px var(--accent)}.sidebar{padding:16px}.sidebar h2{display:none}}
+@media(max-width:600px){.top{padding:12px 16px;flex-wrap:wrap}.tools{width:100%}.tools .btn{flex:1;padding:8px;font-size:13px}main{margin:20px auto;padding:0 16px}.hero{grid-template-columns:1fr;padding:26px;gap:20px}.hero-picture{grid-row:1}.portrait,.fallback{width:85px;height:100px;border-radius:18px}.fallback{font-size:30px}.content{padding:20px}.grid{grid-template-columns:1fr}.tabs{display:grid;grid-template-columns:1fr 1fr}.tab{font-size:13px;padding:10px;white-space:normal}.tab:last-child{grid-column:1/-1}.note{padding:20px}.hero h1{font-size:32px}}
+@media(prefers-reduced-motion:no-preference){button{transition:background .15s,color .15s}}
+@media print{header,.sidebar,.search-area,.tools,.toast,.manual{display:none!important}body{background:white;color:black}main{margin:0;padding:0}.hero{background:white;color:black;border:1px solid #ccc}.hero a{color:black}.layout{display:block}.content{padding:20px;box-shadow:none}.panel[hidden]{display:block!important}.panel{margin-bottom:25px}.card,.note{background:white;color:black;box-shadow:none;break-inside:avoid}.panel h2{break-after:avoid}.foot{color:black}}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Portfolio v2: responsive visual system */
+:root{--bg:#f5f5fb;--accent:#5b45c5;--radius:22px}
+:root[data-theme="dark"]{--bg:#10121d;--surface:#1b1e2e;--soft:#23273a;--line:#373d57;--accent:#b9afff}
+body{background:radial-gradient(ellipse at 10% 0%,#8b74ed14,transparent 55%),var(--bg)}
+header{position:sticky;top:0;z-index:20;background:var(--surface)}.brand-dot{color:var(--accent);font-size:26px}.brand{display:inline-block;font-size:15px}.top{max-width:1240px}
+main{max-width:1240px;margin-top:28px}.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#30276c,#5e43b3 60%,#8b69d3);padding:52px;grid-template-columns:1fr 220px;min-height:340px;box-shadow:0 22px 55px #39266725}.hero:before{content:"";position:absolute;width:350px;height:350px;border:1px solid #ffffff18;border-radius:50%;right:-110px;top:-150px;pointer-events:none}.hero>div{position:relative}.hero h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.035em}.hero-subtitle{display:block;font-size:clamp(20px,3vw,30px);font-weight:400;letter-spacing:0;margin-top:12px;color:#e3dbff}.hero p:not(.eyebrow){color:#eee9ff}.eyebrow{color:#e2d6ff}.portrait,.fallback{width:190px;height:220px;border-radius:90px 90px 28px 28px;box-shadow:0 15px 35px #0002}.hero-picture{justify-self:center}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.hero-primary,.hero-secondary{padding:12px 18px;border-radius:12px;font-weight:650;border:1px solid #ffffff77}.hero-primary{background:white;color:#352573}.hero-secondary{background:transparent;color:white}.hero-primary:hover{background:#ebe7ff}.hero-secondary:hover{background:#ffffff16}
+.layout{grid-template-columns:250px minmax(0,1fr);gap:24px}.sidebar{position:sticky;top:100px}.content{padding:32px}.tab{min-height:48px}.panel h2{letter-spacing:-.025em;font-size:29px}.card{padding:22px}.card p:last-child{margin-bottom:0}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.section-kicker{font-size:11px;font-weight:750;letter-spacing:.15em;color:var(--accent);margin-bottom:7px}.count-label{font-size:12px;background:var(--soft);padding:5px 10px;border-radius:20px;white-space:nowrap}.project-filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 8px}.filter{padding:8px 14px;border-radius:30px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:13px}.filter[aria-pressed="true"]{background:var(--accent);color:var(--surface);border-color:var(--accent)}.project-card{padding:0;overflow:hidden;display:flex;flex-direction:column}.project-cover{height:115px;background:linear-gradient(120deg,#5b45c526,#9e8bdd22);padding:22px;display:flex;justify-content:space-between;align-items:center;color:var(--accent)}.project-cover>span{font-size:38px;font-weight:800;opacity:.6}.cover-java{background:linear-gradient(120deg,#e7a13622,#e7c08d18)}.cover-python{background:linear-gradient(120deg,#3589c922,#3eac9918)}.project-body{padding:22px;display:flex;flex-direction:column;flex:1}.project-body .project-links{margin-top:auto;padding-top:12px;align-items:center}.project-body h3{font-size:18px}.project-body p{font-size:14px}.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.note{font-size:14px}.dialog{max-width:560px;width:calc(100% - 32px);max-height:85vh;overflow:auto;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}.dialog::backdrop{background:#080a1bb3}.dialog-heading{display:flex;justify-content:space-between;gap:15px;align-items:start;margin-bottom:16px}.dialog-heading h2{font-size:24px;margin:0}.close-dialog{font-size:20px;min-width:44px}.dialog p{line-height:1.7}.back-top{position:fixed;right:22px;bottom:24px;z-index:15;border-radius:50%;width:46px;height:46px;background:var(--surface);color:var(--accent);border:1px solid var(--line);box-shadow:var(--shadow);font-size:22px}.skip-link{position:fixed;left:16px;top:-80px;z-index:50;padding:12px;background:var(--surface);color:var(--accent)}.skip-link:focus{top:12px}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}.sidebar{position:static}.tabs{display:grid;grid-template-columns:repeat(3,1fr)}.tab{text-align:center}.hero{padding:36px;grid-template-columns:1fr 150px}.portrait,.fallback{width:140px;height:170px}}
+@media(max-width:600px){header{position:static}.top{padding:12px 16px}.hero{grid-template-columns:1fr;padding:28px;min-height:0}.hero-picture{grid-row:1;justify-self:start}.portrait,.fallback{width:96px;height:110px}.hero h1{font-size:35px}.hero-actions button{flex:1}.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.tab:last-child{grid-column:auto}.tab{padding:10px 6px}.content{padding:20px}.panel h2{font-size:25px}.grid{grid-template-columns:1fr}.card{padding:18px}.project-card{padding:0}.project-body{padding:18px}.tools .btn{font-size:12px}.back-top{right:12px;bottom:12px}.toast{bottom:68px}.dialog{padding:20px}.section-heading{align-items:start}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media print{button,.hero-actions,.project-filters,.project-detail,.back-top,.skip-link,.dialog,.search-results{display:none!important}header{position:static}.hero{padding:24px;min-height:0;background:white;box-shadow:none;color:black}.hero p,.hero-subtitle,.eyebrow{color:black!important}.hero-subtitle{font-size:22px}.project-cover{height:auto;padding:10px;background:white;color:black}.project-grid{grid-template-columns:1fr 1fr}.project-card[hidden]{display:flex!important}.content{border:0}.panel{break-inside:auto}.card{border:1px solid #ccc}.tags span{color:black}#search-results{display:none!important}}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 24px;
-            color: #333;
-        }
-
-        .container {
-            background: paleturquoise;
-            border-radius: 16px;
-            padding: 48px;
-            width: 100%;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        h1 {
-            color: #667eea;
-            margin-bottom: 8px;
-            font-size: 32px;
-            line-height: 1.3;
-        }
-
-        h2 {
-            color: #764ba2;
-            margin-bottom: 24px;
-            font-size: 18px;
-            font-weight: normal;
-        }
-
-        .author {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .avatar {
-            display: block;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .profile-menu {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px 0;
-        }
-
-        .profile-menu button {
-            padding: 10px 14px;
-            border: 1px solid #667eea;
-            border-radius: 20px;
-            background: white;
-            color: #667eea;
-            font: inherit;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .profile-menu button:hover,
-        .profile-menu button[aria-selected="true"] {
-            background: #667eea;
-            color: white;
-        }
-
-        .profile-menu button:focus-visible {
-            outline: 3px solid #764ba2;
-            outline-offset: 3px;
-        }
-
-        .profile-panel {
-            background: #f8f4fa;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: left;
-            overflow-wrap: anywhere;
-        }
-
-        .profile-panel h3 {
-            color: #764ba2;
-            margin-bottom: 12px;
-        }
-
-        .profile-panel p {
-            margin: 8px 0;
-            line-height: 1.6;
-        }
-
-        .profile-panel a {
-            color: #667eea;
-        }
-
-        .info {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 16px 0;
-            text-align: left;
-        }
-
-        .info p {
-            margin: 8px 0;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin: 4px;
-        }
-
-        .badge a {
-            color: white;
-        }
-
-        .footer {
-            margin-top: 24px;
-            font-size: 13px;
-            color: #999;
-        }
-
-        .status {
-            color: #38a169;
-            font-weight: bold;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 32px 20px;
-            }
-
-            h1 {
-                font-size: 26px;
-            }
-        }
-    </style>
+</style>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Hello, Class K22A KTPM, How are YOU ???</h1>
-        <h2>Lab 1 — Trải nghiệm CI/CD Pipeline</h2>
-
-        <p class="author">Author: PHẠM TUẤN ANH</p>
-        <img
-            class="avatar"
-            src="Avt.jpg"
-            alt="Ảnh đại diện của Phạm Tuấn Anh"
-        >
-
-        <div class="profile-menu"
-             role="tablist"
-             aria-label="Hồ sơ cá nhân">
-
-            <button type="button" id="tab-personal" role="tab"
-                    aria-selected="true"
-                    aria-controls="personal"
-                    tabindex="0">
-                Thông tin cá nhân
-            </button>
-
-            <button type="button" id="tab-experience" role="tab"
-                    aria-selected="false"
-                    aria-controls="experience"
-                    tabindex="-1">
-                Năng lực & kinh nghiệm
-            </button>
-
-            <button type="button" id="tab-education" role="tab"
-                    aria-selected="false"
-                    aria-controls="education"
-                    tabindex="-1">
-                Bằng cấp
-            </button>
-
-            <button type="button" id="tab-languages" role="tab"
-                    aria-selected="false"
-                    aria-controls="languages"
-                    tabindex="-1">
-                Ngôn ngữ
-            </button>
-
-            <button type="button" id="tab-projects" role="tab"
-                    aria-selected="false"
-                    aria-controls="projects"
-                    tabindex="-1">
-                Dự án
-            </button>
-        </div>
-
-        <!-- Sửa các nội dung trong dấu [ ] thành thông tin của bạn -->
-        <section id="personal" class="profile-panel"
-                 role="tabpanel"
-                 aria-labelledby="tab-personal"
-                 tabindex="0">
-            <h3>Thông tin cá nhân</h3>
-            <p><strong>Họ tên:</strong> Phạm Tuấn Anh</p>
-            <p><strong>MSSV:</strong> DTC235180017 </p>
-            <p><strong>Lớp:</strong> KTPM K22A</p>
-            <p><strong>Email:</strong> DTC235180017@ictu.edu.vn </p>
-            <p>
+<a class="skip-link" href="#workspace">Bỏ qua phần đầu, đến hồ sơ</a>
+<header><div class="top"><a class="brand" href="#home">PTA<span class="brand-dot">.</span> / PORTFOLIO</a><div class="tools"><button class="btn" id="theme" type="button" aria-pressed="false">Chế độ tối</button><button class="btn" id="share" type="button">Sao chép liên kết</button><button class="btn" id="print" type="button">In hồ sơ</button></div></div></header>
+<main id="home">
+<section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">SOFTWARE ENGINEERING · DEVOPS</p><h1 id="hero-title">Phạm Tuấn Anh<span class="hero-subtitle">Code. Learn. Improve.</span></h1><p>Sinh viên năm cuối ngành Kỹ Thuật Phần Mềm, đam mê lập trình và DevOps. Mong muốn phát triển kỹ năng CI/CD và triển khai ứng dụng web.</p><div class="chips"><span class="chip">HTML & CSS</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD</span></div><div class="hero-actions"><button type="button" class="hero-primary" data-open="projects">Khám phá dự án ↗</button><button type="button" class="hero-secondary" data-open="contact">Liên hệ với tôi</button></div></div><div class="hero-picture"><img class="portrait" id="portrait" src="Avt.jpg" alt="Ảnh đại diện của Phạm Tuấn Anh"><div id="avatar-fallback" class="fallback" hidden aria-label="Chữ viết tắt tên Phạm Tuấn Anh">PTA</div></div></section>
+<div class="layout">
+<aside class="sidebar"><h2>KHÁM PHÁ HỒ SƠ</h2><div class="tabs" role="tablist" aria-label="Các mục hồ sơ"><button type="button" class="tab" id="tab-personal" role="tab" aria-controls="personal" aria-selected="true" tabindex="0">Thông tin cá nhân</button><button type="button" class="tab" id="tab-experience" role="tab" aria-controls="experience" aria-selected="false" tabindex="-1">Năng lực & kinh nghiệm</button><button type="button" class="tab" id="tab-education" role="tab" aria-controls="education" aria-selected="false" tabindex="-1">Bằng cấp & học vấn</button><button type="button" class="tab" id="tab-languages" role="tab" aria-controls="languages" aria-selected="false" tabindex="-1">Ngôn ngữ</button><button type="button" class="tab" id="tab-projects" role="tab" aria-controls="projects" aria-selected="false" tabindex="-1">Dự án</button><button type="button" class="tab" id="tab-contact" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Liên hệ</button></div></aside>
+<div class="content" id="workspace" tabindex="-1">
+<div class="search-area"><label class="search-label" for="search">Tìm trong toàn bộ hồ sơ</label><input class="search" id="search" type="search" placeholder="Ví dụ: GitHub, dự án, học vấn…" autocomplete="off"><p class="search-status" id="search-status" role="status" aria-live="polite"></p></div>
+<!-- Thay nội dung trong dấu [ ] bằng thông tin thật của bạn. -->
+<section class="panel" id="personal" role="tabpanel" aria-labelledby="tab-personal" tabindex="0"><h2>Thông tin cá nhân</h2><div class="grid"><div class="card"><p><strong>Họ tên:</strong> Phạm Tuấn Anh</p></div><div class="card"><p><strong>MSSV:</strong> DTC235180017 </p></div><div class="card"><p><strong>Lớp:</strong> KTPM K22A</p></div><div class="card"><p><strong>Email:</strong> <a href="mailto:DTC235180017@ictu.edu.vn">DTC235180017@ictu.edu.vn</a> </p></div><div class="card wide"><p>
                 <strong>GitHub:</strong>
                 <a href="https://github.com/pta204">github.com/pta204</a>
-            </p>
-            <p>
+            </p></div><div class="card wide"><p>
                 <strong>Giới thiệu:</strong>
-                Sinh viên năm cuối ngành Kỹ Thuật Phần Mềm, đam mê lập trình và DevOps. Mong muốn phát triển kỹ năng CI/CD và triển khai ứng dụng web hoặc di độngdocker --version
-            </p>
-        </section>
-
-        <section id="experience" class="profile-panel"
-                 role="tabpanel"
-                 aria-labelledby="tab-experience"
-                 tabindex="0" hidden>
-            <h3>Năng lực & kinh nghiệm</h3>
-            <p><strong>Kỹ năng:</strong> Thành thạo các ngôn ngữ lập trình cơ bản và nâng cao </p>
-            <p><strong>Công cụ:</strong> VSCode, Dev-C, Pycharm</p>
-            <p>
+                Sinh viên năm cuối ngành Kỹ Thuật Phần Mềm, đam mê lập trình và DevOps. Mong muốn phát triển kỹ năng CI/CD và triển khai ứng dụng web.
+            </p></div></div></section>
+<section class="panel" id="experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="0" hidden><h2>Năng lực & kinh nghiệm</h2><div class="grid"><div class="card wide"><p><strong>Kỹ năng:</strong> Thành thạo các ngôn ngữ lập trình cơ bản và nâng cao </p></div><div class="card wide"><p><strong>Công cụ:</strong> VSCode, Dev-C, Pycharm</p></div><div class="card wide"><p>
                 <strong>Kinh nghiệm:</strong>
                 Quản lý nhóm nhỏ, tham gia các dự án học thuật và cá nhân, triển khai CI/CD cho các dự án web.
-            </p>
-            <p>
+            </p></div><div class="card wide"><p>
                 <strong>Mục tiêu:</strong>
                 Nâng cao kỹ năng DevOps, triển khai các dự án thực tế và đóng góp vào cộng đồng mã nguồn mở.
-            </p>
-        </section>
-
-        <section id="education" class="profile-panel"
-                 role="tabpanel"
-                 aria-labelledby="tab-education"
-                 tabindex="0" hidden>
-            <h3>Bằng cấp & học vấn</h3>
-            <p><strong>Trường:</strong> Đại học Công Nghệ Thông Tin & Truyền Thông Thái Nguyên</p>
-            <p><strong>Ngành học:</strong> Kỹ Thuật Phần Mềm </p>
-            <p><strong>Tình trạng:</strong> Đang học năm 4 </p>
-            <p>
+            </p></div></div></section>
+<section class="panel" id="education" role="tabpanel" aria-labelledby="tab-education" tabindex="0" hidden><h2>Bằng cấp & học vấn</h2><div class="grid"><div class="card wide"><p><strong>Trường:</strong> Đại học Công Nghệ Thông Tin & Truyền Thông Thái Nguyên</p></div><div class="card wide"><p><strong>Ngành học:</strong> Kỹ Thuật Phần Mềm </p></div><div class="card wide"><p><strong>Tình trạng:</strong> Đang học năm 4 </p></div><div class="card wide"><p>
                 <strong>Bằng cấp / chứng chỉ:</strong>
                 Chưa có chứng chỉ chuyên môn, đang trong quá trình học tập và chuẩn bị cho các kỳ thi chứng chỉ quốc tế.
-            </p>
-        </section>
-
-        <section id="languages" class="profile-panel"
-                 role="tabpanel"
-                 aria-labelledby="tab-languages"
-                 tabindex="0" hidden>
-            <h3>Ngôn ngữ</h3>
-            <p><strong>Tiếng Việt:</strong> Thành thạo</p>
-            <p><strong>Tiếng Anh:</strong> Giao tiếp và nghe viết ổn </p>
-            <p><strong>Ngôn ngữ khác:</strong> Tiếng Trung </p>
-            <p>
+            </p></div></div></section>
+<section class="panel" id="languages" role="tabpanel" aria-labelledby="tab-languages" tabindex="0" hidden><h2>Ngôn ngữ</h2><div class="grid"><div class="card wide"><p><strong>Tiếng Việt:</strong> Thành thạo</p></div><div class="card wide"><p><strong>Tiếng Anh:</strong> Giao tiếp và nghe viết ổn </p></div><div class="card wide"><p><strong>Ngôn ngữ khác:</strong> Tiếng Trung </p></div><div class="card wide"><p>
                 <strong>Ngôn ngữ lập trình:</strong>
-                [Java, Python, C++, JavaScript, HTML/CSS]
-            </p>
-        </section>
+                Java, Python, C++, JavaScript, HTML/CSS
+            </p></div></div></section>
+<section class="panel" id="projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="0" hidden>
+<div class="section-heading"><div><p class="section-kicker">SELECTED WORK</p><h2>Dự án</h2></div><span class="count-label">4 dự án</span></div>
+<p class="muted">Các dự án học thuật và cá nhân tôi đã giới thiệu trong hồ sơ.</p>
+<div class="project-filters" role="group" aria-label="Lọc dự án theo công nghệ"><button type="button" class="filter" data-filter="all" aria-pressed="true">Tất cả</button><button type="button" class="filter" data-filter="web" aria-pressed="false">Web & DevOps</button><button type="button" class="filter" data-filter="java" aria-pressed="false">Java</button><button type="button" class="filter" data-filter="python" aria-pressed="false">Python</button></div>
+<p id="filter-status" class="small muted" role="status">Hiển thị 4 dự án</p><div class="grid project-grid">
+<article class="card project-card" data-category="web"><div class="project-cover cover-web" aria-hidden="true"><span>01</span><strong>HTML/CSS</strong></div><div class="project-body"><h3>DevOps Lab 1 — Website cá nhân</h3><p class="muted">Xây dựng website bằng HTML, CSS và JavaScript. Sử dụng GitHub Actions để tự động triển khai lên GitHub Pages.</p><div class="tags"><span>HTML/CSS</span><span>JavaScript</span><span>CI/CD</span></div><div class="project-links"><button class="btn project-detail" type="button" data-project="0">Xem chi tiết</button><a href="https://github.com/pta204/devops-lab1-portfolio">Mã nguồn ↗</a></div></div></article><article class="card project-card" data-category="java"><div class="project-cover cover-java" aria-hidden="true"><span>02</span><strong>Java</strong></div><div class="project-body"><h3>Ứng dụng quản lý sinh viên</h3><p class="muted">Dự án ứng dụng quản lý sinh viên sử dụng Java và MySQL.</p><div class="tags"><span>Java</span><span>MySQL</span></div><div class="project-links"><button class="btn project-detail" type="button" data-project="1">Xem chi tiết</button></div></div></article><article class="card project-card" data-category="web"><div class="project-cover cover-web" aria-hidden="true"><span>03</span><strong>HTML/CSS</strong></div><div class="project-body"><h3>Trang web bán hàng trực tuyến</h3><p class="muted">Dự án trang web bán hàng trực tuyến sử dụng HTML/CSS và JavaScript.</p><div class="tags"><span>HTML/CSS</span><span>JavaScript</span></div><div class="project-links"><button class="btn project-detail" type="button" data-project="2">Xem chi tiết</button></div></div></article><article class="card project-card" data-category="python"><div class="project-cover cover-python" aria-hidden="true"><span>04</span><strong>Python</strong></div><div class="project-body"><h3>Ứng dụng chatbot hỗ trợ học tập</h3><p class="muted">Dự án chatbot hỗ trợ học tập sử dụng Python và Flask.</p><div class="tags"><span>Python</span><span>Flask</span></div><div class="project-links"><button class="btn project-detail" type="button" data-project="3">Xem chi tiết</button></div></div></article></div></section>
+<section class="panel" id="contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="0" hidden><p class="section-kicker">GET IN TOUCH</p><h2>Liên hệ</h2><p class="muted">Bạn có thể trao đổi về học tập, lập trình và các dự án qua email hoặc GitHub.</p><div class="grid"><div class="card wide"><h3>Email</h3><p><a href="mailto:DTC235180017@ictu.edu.vn">DTC235180017@ictu.edu.vn</a></p><div class="project-links"><a class="btn" href="mailto:DTC235180017@ictu.edu.vn">Mở ứng dụng email</a><button class="btn" id="copy-email" type="button">Sao chép email</button></div></div><div class="card wide"><h3>GitHub</h3><p><a href="https://github.com/pta204">github.com/pta204 ↗</a></p><p class="muted">Xem mã nguồn portfolio và các repository công khai.</p></div></div></section>
+<section id="search-results" aria-labelledby="results-title" hidden><h2 id="results-title">Kết quả tìm kiếm</h2><div id="results-list" class="grid"></div></section>
+<div class="manual" id="manual-copy" hidden><label for="copy-url">Trình duyệt chưa cho phép sao chép. Bạn có thể chọn liên kết dưới đây:</label><input id="copy-url" readonly><button id="close-copy" class="btn" type="button" style="margin-top:8px">Đóng</button></div>
+</div></div>
+<section class="note" aria-label="Thông tin triển khai"><div><p><strong>DevOps Lab 1</strong></p><p class="small muted">Push code → Kiểm tra → Triển khai → Website online</p></div><div><p class="small">Hosting: GitHub Pages</p><p class="small muted">Ngày xem trang: <span id="date"></span></p><a class="small" href="https://github.com/pta204/devops-lab1-portfolio/actions">Kiểm tra pipeline trên GitHub ↗</a></div></section>
+</main><footer class="foot">© <span id="year"></span> Phạm Tuấn Anh · Portfolio</footer><div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<dialog class="dialog" id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title"></h2><button type="button" class="btn close-dialog" id="close-dialog" aria-label="Đóng chi tiết dự án">×</button></div><p id="dialog-description"></p><div class="tags" id="dialog-tags"></div><div id="dialog-links" class="project-links"></div></dialog>
+<button type="button" class="back-top" id="back-top" aria-label="Về đầu trang" hidden>↑</button>
+<script>
+const tabs=[...document.querySelectorAll('[role="tab"]')];const panels=[...document.querySelectorAll('.panel')];const search=document.getElementById('search');const results=document.getElementById('search-results');const list=document.getElementById('results-list');const status=document.getElementById('search-status');let active='personal';
+function openTab(id,updateHash=true){if(!panels.some(p=>p.id===id))id='personal';active=id;search.value='';results.hidden=true;status.textContent='';tabs.forEach(t=>{const yes=t.getAttribute('aria-controls')===id;t.setAttribute('aria-selected',String(yes));t.tabIndex=yes?0:-1});panels.forEach(p=>p.hidden=p.id!==id);if(updateHash)try{history.pushState(null,'','#'+id)}catch{}}
+tabs.forEach((t,i)=>{t.addEventListener('click',()=>openTab(t.getAttribute('aria-controls')));t.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight'||e.key==='ArrowDown')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();openTab(tabs[n].getAttribute('aria-controls'));tabs[n].focus()})});
+const normalize=s=>s.toLocaleLowerCase('vi').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');
+search.addEventListener('input',()=>{const q=normalize(search.value.trim());if(!q){results.hidden=true;panels.forEach(p=>p.hidden=p.id!==active);status.textContent='';return}panels.forEach(p=>p.hidden=true);results.hidden=false;list.replaceChildren();let count=0;panels.forEach(p=>{p.querySelectorAll('.card').forEach(c=>{if(!normalize(c.textContent).includes(q))return;count++;const item=document.createElement('div');item.className='card';const label=document.createElement('span');label.className='label';label.textContent=p.querySelector('h2').textContent;const text=document.createElement('p');text.textContent=c.textContent.trim().replace(/\s+/g,' ');const button=document.createElement('button');button.type='button';button.className='btn';button.textContent='Mở mục này';button.addEventListener('click',()=>{openTab(p.id);p.focus()});item.append(label,text,button);list.append(item)})});status.textContent=count?count+' kết quả phù hợp':'Không tìm thấy nội dung phù hợp. Hãy thử từ khóa khác.'});
+const theme=document.getElementById('theme');function syncTheme(){const dark=document.documentElement.dataset.theme==='dark';theme.textContent=dark?'Chế độ sáng':'Chế độ tối';theme.setAttribute('aria-pressed',String(dark))}syncTheme();theme.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('portfolio-theme',next)}catch{}syncTheme()});
+const toast=document.getElementById('toast');let timer;function notify(message){clearTimeout(timer);toast.textContent=message;toast.hidden=false;timer=setTimeout(()=>toast.hidden=true,3500)}
+document.getElementById('share').addEventListener('click',async()=>{const url=location.protocol==='file:'?'https://pta204.github.io/devops-lab1-portfolio/#'+active:location.href;try{if(!navigator.clipboard)throw Error();await navigator.clipboard.writeText(url);notify('Đã sao chép liên kết hồ sơ.')}catch{document.getElementById('manual-copy').hidden=false;const field=document.getElementById('copy-url');field.value=url;field.focus();field.select()}});document.getElementById('close-copy').addEventListener('click',()=>{document.getElementById('manual-copy').hidden=true;document.getElementById('share').focus()});
+document.getElementById('print').addEventListener('click',()=>window.print());
+const photo=document.getElementById('portrait');function photoFallback(){photo.hidden=true;const fallback=document.getElementById('avatar-fallback');fallback.hidden=false;fallback.style.display='grid'}photo.addEventListener('error',photoFallback);if(photo.complete&&photo.naturalWidth===0)photoFallback();
+document.getElementById('date').textContent=new Date().toLocaleDateString('vi-VN');document.getElementById('year').textContent=new Date().getFullYear();openTab(location.hash.slice(1),false);window.addEventListener('hashchange',()=>openTab(location.hash.slice(1),false));
 
-        <section id="projects" class="profile-panel"
-                 role="tabpanel"
-                 aria-labelledby="tab-projects"
-                 tabindex="0" hidden>
-            <h3>Dự án</h3>
-            <p><strong>DevOps Lab 1 — Website cá nhân</strong></p>
-            <p>
-                Xây dựng website bằng HTML, CSS và JavaScript.
-                Sử dụng GitHub Actions để tự động triển khai
-                lên GitHub Pages.
-            </p>
-            <p>
-                <a href="https://github.com/pta204/devops-lab1-portfolio">
-                    Xem mã nguồn dự án
-                </a>
-            </p>
-            <p>
-                <strong>Dự án khác:</strong>
-                <ul>
-                    <li>Ứng dụng quản lý sinh viên (Java, MySQL)</li>
-                    <li>Trang web bán hàng trực tuyến (HTML/CSS, JavaScript)</li>
-                    <li>Ứng dụng chatbot hỗ trợ học tập (Python, Flask)</li>
-            </p>
-        </section>
+// New interactions.
+document.querySelectorAll('[data-open]').forEach(button=>button.addEventListener('click',()=>{openTab(button.dataset.open);document.getElementById('workspace').scrollIntoView({block:'start'});document.getElementById(button.dataset.open).focus({preventScroll:true})}));
+const filters=[...document.querySelectorAll('[data-filter]')];const projectCards=[...document.querySelectorAll('.project-card')];
+filters.forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;let total=0;filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));projectCards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter;if(!card.hidden)total++});document.getElementById('filter-status').textContent='Hiển thị '+total+' dự án'}));
+const dialog=document.getElementById('project-dialog');let dialogOpener=null;
+document.querySelectorAll('.project-detail').forEach(button=>button.addEventListener('click',()=>{const card=button.closest('.project-card');dialogOpener=button;document.getElementById('dialog-title').textContent=card.querySelector('h3').textContent;document.getElementById('dialog-description').textContent=card.querySelector('p').textContent;document.getElementById('dialog-tags').replaceChildren(...[...card.querySelectorAll('.tags span')].map(t=>t.cloneNode(true)));const links=document.getElementById('dialog-links');links.replaceChildren();if(button.dataset.project==='0'){const source=document.createElement('a');source.href='https://github.com/pta204/devops-lab1-portfolio';source.textContent='Xem mã nguồn ↗';const live=document.createElement('a');live.href='https://pta204.github.io/devops-lab1-portfolio/';live.textContent='Mở website ↗';links.append(source,live)}else{const note=document.createElement('p');note.className='muted small';note.textContent='Hồ sơ chưa có liên kết mã nguồn cho dự án này.';links.append(note)}dialog.showModal()}));
+document.getElementById('close-dialog').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>dialogOpener?.focus());dialog.addEventListener('click',event=>{const rect=dialog.getBoundingClientRect();if(event.target===dialog&&(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom))dialog.close()});
+document.getElementById('copy-email').addEventListener('click',async()=>{const email='DTC235180017@ictu.edu.vn';try{if(!navigator.clipboard)throw Error();await navigator.clipboard.writeText(email);notify('Đã sao chép email.')}catch{const field=document.getElementById('copy-url');document.getElementById('manual-copy').hidden=false;field.previousElementSibling.textContent='Bạn có thể chọn và sao chép nội dung dưới đây:';field.value=email;field.focus();field.select()}});
+const backTop=document.getElementById('back-top');window.addEventListener('scroll',()=>{backTop.hidden=window.scrollY<350},{passive:true});backTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});document.querySelector('.brand').focus({preventScroll:true})});
+</script>
 
-        <div class="info">
-            <p><strong>Lesson:</strong> DevOps Lab 1 — Tổng quan</p>
-            <p><strong>Deploy by:</strong> GitHub Actions CI/CD</p>
-            <p><strong>Day deploy:</strong> <span id="date"></span></p>
-            <p>
-                <strong>Pipeline status:</strong>
-                <span class="status">Automated</span>
-            </p>
-        </div>
-
-        <div>
-            <span class="badge">HTML5</span>
-            <span class="badge">CSS3</span>
-            <span class="badge">Git</span>
-            <span class="badge">GitHub Actions</span>
-            <span class="badge">CI/CD</span>
-            <br>
-            <span class="badge">
-                <a href="https://github.com/pta204/devops-lab1-portfolio">
-                    DevOps 🔗
-                </a>
-            </span>
-        </div>
-
-        <div class="footer">
-            <p>Deployed automatically via GitHub Actions Pipeline</p>
-            <p>Push code → CI Build → Auto Deploy → Live!</p>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('date').textContent =
-            new Date().toLocaleDateString('vi-VN');
-
-        const tabs = Array.from(
-            document.querySelectorAll('.profile-menu [role="tab"]')
-        );
-
-        function selectTab(selectedTab) {
-            tabs.forEach(tab => {
-                const isSelected = tab === selectedTab;
-
-                tab.setAttribute('aria-selected', String(isSelected));
-                tab.tabIndex = isSelected ? 0 : -1;
-
-                const panel = document.getElementById(
-                    tab.getAttribute('aria-controls')
-                );
-
-                panel.hidden = !isSelected;
-            });
-        }
-
-        tabs.forEach((tab, index) => {
-            tab.addEventListener('click', () => selectTab(tab));
-
-            tab.addEventListener('keydown', event => {
-                let nextIndex;
-
-                if (event.key === 'ArrowRight') {
-                    nextIndex = (index + 1) % tabs.length;
-                } else if (event.key === 'ArrowLeft') {
-                    nextIndex = (index - 1 + tabs.length) % tabs.length;
-                } else if (event.key === 'Home') {
-                    nextIndex = 0;
-                } else if (event.key === 'End') {
-                    nextIndex = tabs.length - 1;
-                } else {
-                    return;
-                }
-
-                event.preventDefault();
-                selectTab(tabs[nextIndex]);
-                tabs[nextIndex].focus();
-            });
-        });
-    </script>
-</body>
-</html>
+</body></html>
